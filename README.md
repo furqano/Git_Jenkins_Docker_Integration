@@ -1,7 +1,7 @@
 
-# Github - Jenkins - Docker 
+# GITHUB - JENKINS - DOCKER 
 
-## This is a sample project to automate the end to end process using Jenkins & Docker
+## THIS IS A SAMPLE PROJECT TO AUTOMATE THE END-END PROCESS USING GITHUB , JENKINS & DOCKER
 
 ## REQUIREMENTS (PRE-INSTALLED)
 
@@ -57,7 +57,9 @@ git push
 ![webhooks](./images/07.png)
 
 
+
 ## NGROK
+
 
 * Github-webhooks requires a public ip to push in order to hook jenkins im using ngrok to tunnel to a public ip  
 
@@ -73,6 +75,7 @@ git push
 
 ## CONFIGURING THE JENKINS
 
+
  * To start the jenkins 
  
  ```
@@ -81,14 +84,16 @@ git push
  
  Note : jenkins usually run on port 8080 i.e, ip:8080/
  
- * This is the homepage of jenkins
+
+* This is the homepage of jenkins
  
  
  ![jenkins home](./images/02.png)
  
  
  
- * To create a job click on new item 
+
+* To create a job click on new item 
  
  
  ![job creation](./images/03.png)
