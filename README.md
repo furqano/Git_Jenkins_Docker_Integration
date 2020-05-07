@@ -77,7 +77,7 @@ git push
  
  To create a job click on new item 
  
- ![job creation](./images/03.jpg)
+ ![job creation](./images/03.png)
  
  *Note :make sure to select the freestyle project*
  
@@ -85,11 +85,11 @@ git push
  
  Creating the job1 (master) :
  
-  ![job1](./images/05.jpg)
+  ![job1](./images/05.png)
   
   * make sure to select the -> **triggers -> GitHub hook trigger for GITScm polling**
   
-  ![jenkins hooks](./images/04.jpg)
+  ![jenkins hooks](./images/04.png)
   
   **In build -> add build setup -> execute shell**
   
@@ -110,11 +110,11 @@ fi
  
  Creating the job2 (dev1) :
  
- ![job2](./images/06.jpg)
+ ![job2](./images/06.png)
  
  * make sure to select the -> **triggers -> GitHub hook trigger for GITScm polling**
  
- ![jenkins hooks](./images/04.jpg)
+ ![jenkins hooks](./images/04.png)
  
  **In build -> add build setup -> execute shell**
  
@@ -138,7 +138,7 @@ Note : if needed can add **-p (any port)** i.e, 8080:80 to tunnel it through the
  
  In the **Branch to merge to** : **master**
  
- ![job3](./images/16.jpg)
+ ![job3](./images/16.png)
  
  Thats it ..Done !!
  
@@ -170,30 +170,31 @@ Note : if needed can add **-p (any port)** i.e, 8080:80 to tunnel it through the
  docker inspect <container name>
  ```
  
- ![containerip](./images/14.jpg)
+ ![containerip](./images/14.png)
  
  
  The jobs created at background and the webserver is configured 
  
- ![docker](./images/10.jpg)
+ ![docker](./images/10.png)
  
  ## Output :
  
  * Jenkins after all the jobs execute sucessfully 
  
- ![jenkins](./images/15.jpg)
+ ![jenkins](./images/15.png)
  
  * Job1 output with it dedicated server 
  
- ![job1](./images/11.jpg)
+ ![job1](./images/11.png)
  
  * Job2 output with it dedicated server 
  
- ![job2](./images/12.jpg)
+ ![job2](./images/12.png)
  
  * Job3 output with the same server as job1 (production system)
  
- ![job3](./images/13.jpg)
+ ![job3](./images/13.png)
  
-
+ 
+ **Its my first post so kindly fix my errors if there is any !! :) **
 
