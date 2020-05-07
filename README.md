@@ -1,15 +1,15 @@
 
 # Github - Jenkins - Docker 
 
-## This is a Project to Automate the end to end process using Jenkins & Docker
+## This is a sample project to automate the end to end process using Jenkins & Docker
 
-## requirements (pre-installed)
+## REQUIREMENTS (PRE-INSTALLED)
 
  * Github
  * Jenkins
  * Docker 
  
-## Github bash :
+## GITHUB BASH :
  
  * Im using the git clone method to simplifiy the steps .
  
@@ -32,7 +32,7 @@
  ![git bash](./images/1.png)
  
  
-### Creating git hooks post-commit 
+### CREATING GIT HOOKS POST-COMMIT  
  
  ```
 $ notepad .git/hooks/post-commit
@@ -48,7 +48,7 @@ git push
 
  Note : The .git/hooks/post-commit is global for the working repository no need of creating it for every branch . 
  
-# creating the git-webhook
+# CREATING THE GIT-WEBHOOKS
  
  ```
  repository setting -> webhooks -> add webhook -> paste the <url/github-webhook/>
@@ -57,7 +57,7 @@ git push
 ![webhooks](./images/07.png)
 
 
-## ngrok
+## NGROK
 
 * Github-webhooks requires a public ip to push in order to hook jenkins im using ngrok to tunnel to a public ip  
 
@@ -71,7 +71,7 @@ git push
 
 
 
-## configuring the jenkins
+## CONFIGURING THE JENKINS
 
  * To start the jenkins 
  
@@ -97,7 +97,7 @@ git push
  
  *Note :make sure to select the freestyle project*
  
- ## job1
+ ## JOB1
  
  * Creating the job1 (master) :
  
@@ -127,7 +127,7 @@ sudo docker run -d -it -v /root/devops:/usr/local/apache2/htdocs/ --name dev htt
 fi
 ``` 
 
- ## job2
+ ## JOB2
  
  * Creating the job2 (dev1) :
  
@@ -157,7 +157,7 @@ fi
 ``` 
 Note : if needed can add **-p (any port)** i.e, 8080:80 to tunnel it through the base os ip.
 
-## job3
+## JOB3
  
 * In **source code Management** there is an **Additional Behaviours** in that select the **post merge** 
  
@@ -171,7 +171,7 @@ Note : if needed can add **-p (any port)** i.e, 8080:80 to tunnel it through the
  
 * Apply and Save 
  
-## Invalid username and Password 
+## INVALID USERNAME AND PASSWORD  
  
  * you might face an error of invalid username and password 
  
@@ -181,7 +181,7 @@ Note : if needed can add **-p (any port)** i.e, 8080:80 to tunnel it through the
  settings -> Developer settings -> create a personal acess tokens 
  ```
 
-## Jenkins Permission Denied 
+## JENKINS PERMISSION DENIED  
 
 * you might face an error of jenkins permission denied. 
 
@@ -200,7 +200,7 @@ jenkins   ALL=(ALL)    NOPASSWD:  ALL
 Note : its bad practice to grand jenkins all permission  
 
 
-## Docker
+## DOCKER 
  
  * To download the apache webserver image from docker hub .
  ```
@@ -227,7 +227,7 @@ Note : its bad practice to grand jenkins all permission
  ![docker](./images/10.png)
  
  
- ## Output :
+ ## OUTPUT :
  
  * Jenkins after all the jobs execute sucessfully 
  
