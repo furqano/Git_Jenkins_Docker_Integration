@@ -1,7 +1,7 @@
 
 # Github - Jenkins - Docker 
 
-## This is a project to automate end-end process using Jenkins & Docker
+## This is a Project to Automate the end to end process using Jenkins & Docker
 
 ## requirements (pre-installed)
 
@@ -11,16 +11,13 @@
  
 ## Github bash :
  
- Im using the git clone method to simplifiy the steps .
+ * Im using the git clone method to simplifiy the steps .
  
  ```
  git clone <repository link>
  ```
  
  ![git repository](./images/08.png)
- 
- 
- ![git bash](./images/1.png)
  
  
  * I have used two branch master (created by default) & dev1 (maually created )
@@ -31,17 +28,24 @@
  
  * when the job3 run the dev1 branch merges with master and gets deployed to the production system .
  
+ 
+ ![git bash](./images/1.png)
+ 
+ 
 ### Creating git hooks post-commit 
  
  ```
 $ notepad .git/hooks/post-commit
 ``` 
+
 * Paste the below script in the notepad
+
 ```
 #! bin/bash
 
 git push
 ```
+
  Note : The .git/hooks/post-commit is global for the working repository no need of creating it for every branch . 
  
 # creating the git-webhook
@@ -69,7 +73,7 @@ git push
 
 ## configuring the jenkins
 
- To start the jenkins 
+ * To start the jenkins 
  
  ```
  systemctl start jenkins
@@ -77,14 +81,14 @@ git push
  
  Note : jenkins usually run on port 8080 i.e, ip:8080/
  
- This is the homepage of jenkins
+ * This is the homepage of jenkins
  
  
  ![jenkins home](./images/02.png)
  
  
  
- To create a job click on new item 
+ * To create a job click on new item 
  
  
  ![job creation](./images/03.png)
@@ -95,22 +99,22 @@ git push
  
  ## job1
  
- Creating the job1 (master) :
+ * Creating the job1 (master) :
  
  
   ![job1](./images/05.png)
   
   
   
-  * make sure to select the -> **triggers -> GitHub hook trigger for GITScm polling**
+ * make sure to select the -> **triggers -> GitHub hook trigger for GITScm polling**
   
   
   ![jenkins hooks](./images/04.png)
   
   
-  **In build -> add build setup -> execute shell**
+ **In build -> add build setup -> execute shell**
   
-  * Paste this commands in the execute shell
+ * Paste this commands in the execute shell
   
   ```
 sudo cp * /root/devops/
@@ -125,7 +129,7 @@ fi
 
  ## job2
  
- Creating the job2 (dev1) :
+ * Creating the job2 (dev1) :
  
  
  ![job2](./images/06.png)
@@ -155,39 +159,58 @@ Note : if needed can add **-p (any port)** i.e, 8080:80 to tunnel it through the
 
 ## job3
  
- In **source code Management** there is an **Additional Behaviours** in that select the **post merge** 
+* In **source code Management** there is an **Additional Behaviours** in that select the **post merge** 
  
- In the **Branch to merge to** : **master**
+* In the **Branch to merge to** : **master**
  
  
  ![job3](./images/16.png)
  
  
- Thats it ..Done !!
+* Thats it ..Done !!
  
- Apply and Save 
+* Apply and Save 
  
 ## Invalid username and Password 
  
  * you might face an error of invalid username and password 
  
- To avoid this error create a token and use it a password while merging the branch (job3)
+ * To avoid this error create a token and use it a password while merging the branch (job3)
  
  ```
  settings -> Developer settings -> create a personal acess tokens 
  ```
 
+## Jenkins Permission Denied 
+
+* you might face an error of jenkins permission denied. 
+
+* we grant the jenkins permission to run the commands by modfying sudoers 
+
+```
+gedit /etc/sudoers
+```
+
+* In the 100th line add this line and save 
+
+```
+jenkins   ALL=(ALL)    NOPASSWD:  ALL
+```
+
+Note : its bad practice to grand jenkins all permission  
+
+
 ## Docker
  
- To download the apache webserver image from docker hub .
+ * To download the apache webserver image from docker hub .
  ```
  docker pull httpd
  ```
  Note : if no version of the image is given it selects **:latest** as default  
 
- The Docker images launched each container has its own dedicated ip adress . 
+ * The Docker images launched each container has its own dedicated ip adress . 
  
- To get the container ip adress we can use 
+ * To get the container ip adress we can use 
  
  ```
  docker inspect <container name>
@@ -198,7 +221,7 @@ Note : if needed can add **-p (any port)** i.e, 8080:80 to tunnel it through the
  
  
  
- The jobs created at background and the webserver is configured 
+ * The jobs created at background and the webserver is configured 
  
  
  ![docker](./images/10.png)
