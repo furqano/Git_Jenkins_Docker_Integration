@@ -123,7 +123,7 @@ if sudo docker ps | grep dev
 then
 echo "already running "
 else 
-sudo docker run -d -it -v /devops:/usr/local/apache2/htdocs/ --name dev httpd
+sudo docker run -d -it -v /root/devops:/usr/local/apache2/htdocs/ --name dev httpd
 fi
 ``` 
 
@@ -152,7 +152,7 @@ if  sudo docker ps | grep dev1
 then
 echo "already running "
 else 
-sudo docker run -d -it  -v /devops:/usr/local/apache2/htdocs/ --name dev1 httpd
+sudo docker run -d -it  -v /root/devops:/usr/local/apache2/htdocs/ --name dev1 httpd
 fi
 ``` 
 Note : if needed can add **-p (any port)** i.e, 8080:80 to tunnel it through the base os ip.
