@@ -19,7 +19,7 @@
  
  ![git repository](./images/08.jpg)
  
- ![git bash](./images/01.png)
+ ![git bash](./images/1.png)
  
  * I have used two branch master (created by default) & dev1 (maually created )
  
@@ -58,6 +58,8 @@ git push
 ```
 ./ngrok
 ```
+
+![ngrok](./images/17.png)
 
 ## configuring the jenkins
 
